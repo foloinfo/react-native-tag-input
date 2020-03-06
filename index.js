@@ -399,14 +399,19 @@ class Tag extends React.PureComponent<TagProps> {
       tagLabel = this.props.label;
     } else {
       tagLabel = (
-        <Text style={[
-            styles.tagText,
-            { color: this.props.tagTextColor },
-            this.props.tagTextStyle,
-          ]}>
-            {this.props.label}
-            &nbsp;&times;
-        </Text>
+        <View style={{
+          flexDirection: 'row',
+          height: 27,
+          paddingRight: 19
+        }}>
+          <Text style={[
+              this.props.tagTextStyle,
+              { color: this.props.tagTextColor },
+            ]}>
+              {this.props.label}
+          </Text>
+          {this.props.closeIcon}
+        </View>
       );
     }
     return (
@@ -415,7 +420,6 @@ class Tag extends React.PureComponent<TagProps> {
         onPress={this.onPress}
         onLayout={this.onLayoutLastTag}
         style={[
-          styles.tag,
           { backgroundColor: this.props.tagColor },
           this.props.tagContainerStyle,
         ]}
