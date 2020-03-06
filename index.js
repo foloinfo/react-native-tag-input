@@ -258,6 +258,7 @@ class TagInput<T> extends React.PureComponent<Props<T>, State> {
         tagTextStyle={this.props.tagTextStyle}
         key={index}
         editable={this.props.editable}
+        closeIcon={this.props.closeIcon}
       />
     ));
 
